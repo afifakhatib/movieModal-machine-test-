@@ -18,6 +18,11 @@ const loader = document.getElementById('loader')
 const baseUrl = `https://movie-modal-project-default-rtdb.asia-southeast1.firebasedatabase.app`;
 const movieUrl = `${baseUrl}/Movie-modal.json`;
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+
 const snackBarmsg = (msg , icon , timer) => {
     swal.fire({
         title : msg,
@@ -92,7 +97,7 @@ makeApiCall(movieUrl , 'GET' ,)
                     <div class="overviewSection">
                         <h4 class="mb-2">${obj.title}</h4>
                         <em>OVERVIEW</em>
-                        <p>${obj.overview}</p>
+                        <p data-toggle="tooltip" data-placement="top" title="${obj.overview}">${obj.overview}</p>
                         <button class="btn btn-primary" onclick="onEdit(this)">Edit</button>
                         <button class="btn btn-danger" onclick="onDelete(this)">delete</button>
                     </div>
@@ -172,7 +177,7 @@ const updatedCard = (obj) => {
 <div class="overviewSection">
     <h4 class="mb-2">${obj.title}</h4>
     <em>OVERVIEW</em>
-    <p>${obj.overview}</p>
+    <p data-toggle="tooltip" data-placement="top" title="${obj.overview}">${obj.overview}</p>
     <button class="btn btn-primary" onclick="onEdit(this)">Edit</button>
     <button class="btn btn-danger" onclick="onDelete(this)">delete</button>
 </div>
@@ -244,7 +249,7 @@ const createCard = (obj) => {
             <div class="overviewSection">
                 <h4 class="mb-2">${obj.title}</h4>
                 <em>OVERVIEW</em>
-                <p>${obj.overview}</p>
+                <p data-toggle="tooltip" data-placement="top" title="${obj.overview}">${obj.overview}</p>
                 <button class="btn btn-primary" onclick="onEdit(this)">Edit</button>
                 <button class="btn btn-danger" onclick="onDelete(this)">delete</button>
             </div>

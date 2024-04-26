@@ -60,9 +60,6 @@ body{
 .movieCard img{
     height: 100%;
     width : 100%;
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
     object-fit: cover;
 }
 
@@ -94,6 +91,14 @@ body{
     overflow: hidden;
     opacity: 0;
     transition: all .5s linear;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+.overviewSection p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
 }
 
 .movieCard:hover .overviewSection,
